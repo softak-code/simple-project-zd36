@@ -1,5 +1,6 @@
 package pl.sdacademy.simple.data;
 
+import java.math.BigDecimal;
 import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +19,7 @@ public class CarEntity {
 	private String producer;
 	private String model;
 	private String colour;
-	private double price;
+	private BigDecimal price;
 	private Byte automatic;
 	@ManyToMany
 	@JoinTable(name = "car_to_attribute",
@@ -58,11 +59,11 @@ public class CarEntity {
 		this.colour = colour;
 	}
 
-	public double getPrice() {
+	public BigDecimal getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
 
