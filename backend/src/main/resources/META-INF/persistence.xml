@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+	<persistence-unit name="CarService" transaction-type="RESOURCE_LOCAL">
+		<class>pl.sdacademy.simple.data.CarEntity</class>
+		<class>pl.sdacademy.simple.data.CarAttributeEntity</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.238.130:3306/cars"/>
+			<property name="javax.persistence.jdbc.user" value="cars"/>
+			<property name="javax.persistence.jdbc.password" value="cars"/>
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+			<property name="hibernate.hikari.minimumIdle" value="5"/>
+			<property name="hibernate.hikari.maximumPoolSize" value="10"/>
+			<property name="hibernate.hikari.idleTimeout" value="30000"/>
+			<property name="hibernate.hikari.connectionTestQuery" value="select count(*) from car"/>
+			<property name="hibernate.connection.provider_class" value="org.hibernate.hikaricp.internal.HikariCPConnectionProvider"/>
+		</properties>
+	</persistence-unit>
+</persistence>
